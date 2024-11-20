@@ -4,6 +4,9 @@
 format: jb-book
 root: intro
 chapters:
-- file: markdown
 - file: recipes/background-model/background_model
+- file: recipes/dark-matter-utilities/astro_dark_matter
+- file: recipes/fit-psd-lightcurves/fit-psd-lightcurve
+- file: recipes/interactive-model-editing/interactive-model-editing
 - file: recipes/pulsar_phase/pulsar_phase_computation
+- file: recipes/ts-vs-excess-map-estimator/ts-vs-excess-map-estimator
