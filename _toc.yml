@@ -8,4 +8,5 @@ chapters:
 - file: recipes/dark-matter-utilities/astro_dark_matter
 - file: recipes/fit-psd-lightcurve/fit-psd-lightcurve
 - file: recipes/pulsar_phase/pulsar_phase_computation
+- file: recipes/mcmc-sampling-emcee/mcmc_sampling
 - file: recipes/ts-vs-excess-map-estimator/ts-vs-exess-map-estimator

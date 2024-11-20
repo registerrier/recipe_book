@@ -50,7 +50,7 @@ jobs:
         source $(conda info --base)/etc/profile.d/conda.sh
         conda activate base 
         
-        # Download datasets
+        # Download datasets (not in the same directory to avoid including md files in jupyter book)
         gammapy download datasets --release 1.2 --out $GITHUB_WORKSPACE/../gammapy-datasets/
         
         # Set the GAMMAPY_DATA environment variable
