@@ -51,7 +51,7 @@ jobs:
         conda activate base 
         
         # Download datasets
-        gammapy download datasets --release 1.2 --out $GITHUB_WORKSPACE/gammapy-datasets/1.2
+        gammapy download datasets --release 1.2 --out $GITHUB_WORKSPACE/gammapy-datasets/
         
         # Set the GAMMAPY_DATA environment variable
         export GAMMAPY_DATA=$GITHUB_WORKSPACE/gammapy_datasets/1.2
