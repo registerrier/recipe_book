@@ -26,7 +26,7 @@ jobs:
     # Step 3: Install Jupyter Book and nb_conda_kernels
     - name: Install Jupyter Book and dependencies
       run: |
-        conda install -c conda-forge jupyter-book nb_conda_kernels mamba -y
+        conda install -c conda-forge jupyter-book nb_conda_kernels mamba gammapy -y
 
     # Step 4: Set up Conda environments for each kernel
     - name: Set up Conda environments
@@ -43,14 +43,29 @@ jobs:
           conda run -n $env_name python -m ipykernel install --user --name=$env_name --display-name "Python ($env_name)"
         done
 
-    # Step 5: Build the Jupyter Book
+     # Step 5: Download Gammapy datasets and set GAMMAPY_DATA
+    - name: Download Gammapy Datasets and Set GAMMAPY_DATA
+      run: |
+        # Activate the environment where Gammapy is installed
+        source $(conda info --base)/etc/profile.d/conda.sh
+        conda activate base 
+        
+        # Download datasets
+        gammapy download datasets --release 1.2 --out $GITHUB_WORKSPACE/gammapy-datasets/1.2
+        
+        # Set the GAMMAPY_DATA environment variable
+        export GAMMAPY_DATA=$GITHUB_WORKSPACE/gammapy_datasets/1.2
+        echo "GAMMAPY_DATA=$GAMMAPY_DATA" >> $GITHUB_ENV
+        echo "Datasets downloaded to $GAMMAPY_DATA and GAMMAPY_DATA set."
+
+    # Step 6: Build the Jupyter Book
     - name: Build Jupyter Book
       run: |
         source $(conda info --base)/etc/profile.d/conda.sh
         conda activate base  
         jupyter-book build .
 
-    # Step 6: Upload the built book as an artifact
+    # Step 7: Upload the built book as an artifact
     - name: Upload HTML output
       uses: actions/upload-artifact@v3
       with:
