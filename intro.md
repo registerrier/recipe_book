@@ -14,20 +14,22 @@ Check out the content pages bundled with this sample book to see more.
 
 This is a gallery of the notebooks included in this book.
 
-```{grid} 2
+::::{grid} 2
 :gutter: 2
-```
-```{grid-item-card}
-:link: recipes/background-model/background_model.ipynb
+
+:::{grid-item-card}
+:link: recipes/background-model/background_model
 :image: thumbnails/notebook1.png
 :title: Creating a background model
 
 A brief description of what Notebook 1 does.
-```
-```{grid-item-card}
-:link: recipes/astro_dark_matter.ipynb
+:::
+
+:::{grid-item-card}
+:link: recipes/astro_dark_matter/astro_dark_matter
 :image: thumbnails/notebook2.png
 :title: Notebook 2
 
 A brief description of what Notebook 2 does.
-```
+:::
+::::
