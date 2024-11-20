@@ -28,7 +28,18 @@ jobs:
       run: |
         conda install -c conda-forge jupyter-book nb_conda_kernels mamba gammapy -y
 
-    # Step 4: Set up Conda environments for each kernel
+    # Step 4: Restore cached _build/ and .jupyter_cache
+    - name: Restore cache
+      uses: actions/cache@v3
+      with:
+        path: |
+          .jupyter_cache
+          recipe_book/_build
+        key: ${{ runner.os }}-jupyter-book-${{ github.sha }}
+        restore-keys: |
+          ${{ runner.os }}-jupyter-book-
+
+    # Step 5: Set up Conda environments for each kernel
     - name: Set up Conda environments
       run: |
         for env_file in $(find recipes/* -name "env.yml"); do
@@ -43,7 +54,7 @@ jobs:
           conda run -n $env_name python -m ipykernel install --user --name=$env_name --display-name "Python ($env_name)"
         done
 
-     # Step 5: Download Gammapy datasets and set GAMMAPY_DATA
+     # Step 6: Download Gammapy datasets and set GAMMAPY_DATA
     - name: Download Gammapy Datasets and Set GAMMAPY_DATA
       run: |
         # Activate the environment where Gammapy is installed
@@ -58,14 +69,23 @@ jobs:
         echo "GAMMAPY_DATA=$GAMMAPY_DATA" >> $GITHUB_ENV
         echo "Datasets downloaded to $GAMMAPY_DATA and GAMMAPY_DATA set."
 
-    # Step 6: Build the Jupyter Book
+    # Step 7: Build the Jupyter Book
     - name: Build Jupyter Book
       run: |
         source $(conda info --base)/etc/profile.d/conda.sh
         conda activate base  
         jupyter-book build .
 
-    # Step 7: Upload the built book as an artifact
+    # Step 8: Save the _build/ and .jupyter_cache to the cache
+    - name: Cache _build/ and .jupyter_cache
+      uses: actions/cache@v3
+      with:
+        path: |
+          .jupyter_cache
+          recipe_book/_build
+        key: ${{ runner.os }}-jupyter-book-${{ github.sha }}
+
+    # Step 9: Upload the built book as an artifact
     - name: Upload HTML output
       uses: actions/upload-artifact@v3
       with:

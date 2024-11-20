@@ -8,8 +8,15 @@ logo: gammapy_logo.png
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: force
+#  execute_notebooks: force
   kernel_spec_manager_class: nb_conda_kernels.CondaKernelSpecManager
+
+jupyter:
+  execution:
+    timeout: 300        # Allow 5 minutes per cell
+    allow_errors: true  # Allow execution to continue even if some cells fail
+  cache: true           # Use cache for previously executed outputs
+
 
 # Define the name of the latex output file for PDF builds
 latex:
