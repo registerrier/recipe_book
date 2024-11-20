@@ -46,6 +46,8 @@ jobs:
     # Step 5: Build the Jupyter Book
     - name: Build Jupyter Book
       run: |
+        source $(conda info --base)/etc/profile.d/conda.sh
+        conda activate base  
         jupyter-book build my_book/
 
     # Step 6: Upload the built book as an artifact
