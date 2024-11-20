@@ -32,7 +32,14 @@ jobs:
     - name: Set up Conda environments
       run: |
         for env_file in $(find recipes/* -name "env.yml"); do
-          conda env create -f $env_file -|| conda env update -f $env_file 
+          # Extract the environment name from the env.yml file
+          env_name=$(grep -E '^name:' $env_file | awk '{print $2}')
+          echo "Creating environment $env_name from $env_file"
+          
+          # Create or update the environment
+          mamba env create -f $env_file -|| conda env update -f $env_file 
+
+          # Register the environment as a Jupyter kernel
           conda run -n $env_name python -m ipykernel install --user --name=$env_name --display-name "Python ($env_name)"
         done
 
