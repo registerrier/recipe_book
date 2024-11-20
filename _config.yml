@@ -13,7 +13,7 @@ execute:
 
 jupyter:
   execution:
-    timeout: 300        # Allow 5 minutes per cell
+    timeout: 1200        # Allow 20 minutes per cell
     allow_errors: true  # Allow execution to continue even if some cells fail
   cache: true           # Use cache for previously executed outputs
 
