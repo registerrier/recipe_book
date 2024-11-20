@@ -21,21 +21,18 @@ jobs:
     - name: Set up Miniconda
       uses: conda-incubator/setup-miniconda@v2
       with:
-        activate-environment: base
         auto-update-conda: true
 
     # Step 3: Install Jupyter Book and nb_conda_kernels
     - name: Install Jupyter Book and dependencies
       run: |
-        conda install -c conda-forge jupyter-book nb_conda_kernels -y
+        conda install -c conda-forge jupyter-book nb_conda_kernels mamba -y
 
     # Step 4: Set up Conda environments for each kernel
     - name: Set up Conda environments
       run: |
         for env_file in $(find recipes/* -name "env.yml"); do
-          env_name=$(basename $(dirname $env_file))  # Use the directory name as the environment name
-          echo "Creating environment $env_name from $env_file"
-          conda env create -f $env_file -n $env_name || conda env update -f $env_file -n $env_name
+          conda env create -f $env_file -|| conda env update -f $env_file 
           conda run -n $env_name python -m ipykernel install --user --name=$env_name --display-name "Python ($env_name)"
         done
 
