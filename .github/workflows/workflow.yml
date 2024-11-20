@@ -74,7 +74,7 @@ jobs:
       run: |
         source $(conda info --base)/etc/profile.d/conda.sh
         conda activate base  
-        jupyter-book build .
+        jupyter-book build . -n
 
     # Step 8: Save the _build/ and .jupyter_cache to the cache
     - name: Cache _build/ and .jupyter_cache
