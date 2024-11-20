@@ -54,7 +54,7 @@ jobs:
         gammapy download datasets --release 1.2 --out $GITHUB_WORKSPACE/gammapy-datasets/
         
         # Set the GAMMAPY_DATA environment variable
-        export GAMMAPY_DATA=$GITHUB_WORKSPACE/gammapy_datasets/1.2
+        export GAMMAPY_DATA=$GITHUB_WORKSPACE/gammapy-datasets/1.2
         echo "GAMMAPY_DATA=$GAMMAPY_DATA" >> $GITHUB_ENV
         echo "Datasets downloaded to $GAMMAPY_DATA and GAMMAPY_DATA set."
 
