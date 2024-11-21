@@ -34,11 +34,8 @@ jobs:
       env:
         cache-name: recipe-build-cache
       with:
-        path: |
-          ~/_build
+        path: _build/.jupyter_cache
         key: ${{ runner.os }}-recipe-book-${{ env.cache-name }}
-        restore-keys: |
-          ${{ runner.os }}-recipe-book-
 
     # Step 5: Set up Conda environments for each kernel
     - name: Set up Conda environments
@@ -87,4 +84,6 @@ jobs:
     # Step 9: Deploy the book's HTML to GitHub Pages
     - name: Deploy to GitHub Pages
       uses: actions/deploy-pages@v2
-      
+      with:
+        github_token: ${{ secrets.RECIPE_SECRET }}
+        publish_dir: _build/html/
