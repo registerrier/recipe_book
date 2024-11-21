@@ -16,33 +16,56 @@ This is a gallery of the notebooks included in this book.
 ::::{grid} 3
 :gutter: 2
 
-:::{grid-item-card}
+:::{grid-item-card} Creating a background model
 :link: {doc}`recipes/background-model/background_model`
-:image: recipes/background-model/thumbnail.png
-:title: Creating a background model
-:height: 150px
+:link-type: ref
+:img-bottom: recipes/background-model/thumbnail.png
 
 A brief description of what Notebook 1 does.
 :::
 
-:::{grid-item-card}
+:::{grid-item-card} Dark matter utilities
 :link: {doc}`recipes/astro_dark_matter/astro_dark_matter`
-:image: thumbnails/notebook2.png
-:title: Dark matter utilities
-:height: 150px
+:link-type: ref
+:img-bottom: thumbnails/notebook2.png
 
 A brief description of what Notebook 2 does.
 :::
-:::{grid-item-card}
+:::{grid-item-card} Fitting PSD
 :link: {doc}`recipes/fit-psd-lightcurve/fit-psd-lightcurve`
-:image: thumbnails/notebook2.png
-:title: Fitting PSD
-:height: 150px
+:link-type: ref
+:img-bottom: thumbnails/notebook2.png
 
 A brief description of what Notebook 3 does.
 :::
 ::::
 
+::::{grid} 3
+:gutter: 2
 
-``{tableofcontents}
+:::{grid-item-card} MCMC sampling
+:link: {doc}`recipes/mcmc-sampling-emcee/mcmc_sampling`
+:link-type: ref
+:img-bottom: recipes/mcmc_sampling/thumbnail.png
+
+A brief description of what Notebook 1 does.
+:::
+
+:::{grid-item-card} Pulsar phasing with PINT
+:link: {doc}`recipes/pulsar_phase/pulsar_phase_computation`
+:link-type: ref
+:img-bottom: recipes/pulsar_phase/thumbnails.png
+
+A brief description of what Notebook 2 does.
+:::
+:::{grid-item-card} Comparing TS and excess maps
+:link: {doc}`recipes/ts-vs-excess-map-estimator/ts-vs-exess-map-estimator`
+:link-type: ref
+:img-bottom: recipes/ts-vs-excess-map-estimator/thumbnails.png
+
+A brief description of what Notebook 3 does.
+:::
+::::
+
+```{tableofcontents}
 ```
