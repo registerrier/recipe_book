@@ -21,7 +21,6 @@ This is a gallery of the notebooks included in this book.
 :link-type: ref
 :img-bottom: recipes/background-model/thumbnail.png
 
-A brief description of what Notebook 1 does.
 :::
 
 :::{grid-item-card} Dark matter utilities
@@ -29,14 +28,12 @@ A brief description of what Notebook 1 does.
 :link-type: ref
 :img-bottom: thumbnails/notebook2.png
 
-A brief description of what Notebook 2 does.
 :::
 :::{grid-item-card} Fitting PSD
 :link: {doc}`recipes/fit-psd-lightcurve/fit-psd-lightcurve`
 :link-type: ref
 :img-bottom: thumbnails/notebook2.png
 
-A brief description of what Notebook 3 does.
 :::
 ::::
 
@@ -48,7 +45,6 @@ A brief description of what Notebook 3 does.
 :link-type: ref
 :img-bottom: recipes/mcmc_sampling/thumbnail.png
 
-A brief description of what Notebook 1 does.
 :::
 
 :::{grid-item-card} Pulsar phasing with PINT
@@ -56,16 +52,17 @@ A brief description of what Notebook 1 does.
 :link-type: ref
 :img-bottom: recipes/pulsar_phase/thumbnails.png
 
-A brief description of what Notebook 2 does.
 :::
 :::{grid-item-card} Comparing TS and excess maps
 :link: {doc}`recipes/ts-vs-excess-map-estimator/ts-vs-exess-map-estimator`
 :link-type: ref
 :img-bottom: recipes/ts-vs-excess-map-estimator/thumbnails.png
 
-A brief description of what Notebook 3 does.
 :::
 ::::
 
+<!---
+Commenting the TOC for now
 ```{tableofcontents}
 ```
+--->
