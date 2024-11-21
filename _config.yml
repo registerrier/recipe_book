@@ -9,9 +9,8 @@ logo: gammapy_logo.png
 # See https://jupyterbook.org/content/execute.html
 execute:
   kernel_spec_manager_class: nb_conda_kernels.CondaKernelSpecManager
-  timeout: 1200        # Allow 20 minutes per cell
+  timeout: 600        # Allow 10 minutes per cell
   execute_notebooks: cache           # Use cache for previously executed outputs
-
 
 # Define the name of the latex output file for PDF builds
 latex:
