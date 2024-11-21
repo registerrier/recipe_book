@@ -102,7 +102,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses:
-          actions/deploy-pages@v3
+          actions/deploy-pages@v4
         with:
           artifact_name: jupyter-book-html
 #      with:
