@@ -10,11 +10,7 @@ logo: gammapy_logo.png
 execute:
 #  execute_notebooks: force
   kernel_spec_manager_class: nb_conda_kernels.CondaKernelSpecManager
-
-jupyter:
-  execution:
-    timeout: 1200        # Allow 20 minutes per cell
-    allow_errors: true  # Allow execution to continue even if some cells fail
+  timeout: 1200        # Allow 20 minutes per cell
   cache: true           # Use cache for previously executed outputs
 
 
